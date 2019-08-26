@@ -23,7 +23,20 @@ const dogLinkCreator = () => {
     li.appendChild(aTag);
 
     dogsArr.push(li);
-
   }
-}
 
+  return dogsArr;
+};
+
+const attachDogLinks = () => {
+
+  const ul = document.querySelector('.drop-down-dog-list');
+
+  const dogLinks = dogLinkCreator();
+
+  for (let i=0; i < dogLinks.length; i++) {
+    ul.appendChild(dogLinks[i]);
+  }
+};
+
+attachDogLinks();
