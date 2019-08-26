@@ -10,3 +10,4 @@ export const htmlGenerator = (string, htmlElement) => {
 };
 
 htmlGenerator('Party Time.', partyHeader);
+htmlGenerator('I <3 Vanilla DOM manipulation', partyHeader);
