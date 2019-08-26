@@ -51,3 +51,14 @@ h1 {
   opacity: 1;
   transform: translateX(0%) scale(1);
 }
+
+
+/* custom */
+.clock-holder {
+  margin-top: 10%;
+  border: 1px solid black;
+  font-size: 20px;
+  padding: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
