@@ -128,7 +128,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _war
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("const ul = document.querySelector('.todos');\nconst form = document.querySelector('.add-todo-form');\n\nconst todos = [];\n\nconst addTodo = () => {\n\n    const todoTask = document.querySelector('input[name=add-todo]').value;\n\n    const todo = {\n        text: todoTask,\n        done: false\n    };\n\n    todos.push(todo);\n\n    form.reset();\n\n};\n\nconst populateList = () => {\n    \n};\n\n//# sourceURL=webpack:///./src/todo_list.js?");
+eval("const ul = document.querySelector('.todos');\nconst form = document.querySelector('.add-todo-form');\n\nlet todos = [];\n\nconst addTodo = (e) => {\n    e.preventDefault();\n\n    // todos = [];\n    // debugger\n    const todoTask = document.querySelector('input[name=add-todo]').value;\n\n    let todo = {\n        text: todoTask,\n        done: false\n    };\n\n    todos.push(todo);\n\n    form.reset();\n\n    populateList(todos);\n};\n\nconst populateList = (todosArr) => {\n    for (let i=0; i < todosArr.length; i++) {\n        // debugger\n        let label = document.createElement('label');\n        let input = document.createElement('input');\n        input.setAttribute('type', 'checkbox');\n\n        label.innerHTML = todosArr[i].text;\n\n        let li = document.createElement('li');\n        li.appendChild(input);\n        li.appendChild(label);\n        ul.appendChild(li);\n\n    }\n    todos = [];\n    // debugger\n};\n\nform.addEventListener('submit', addTodo);\n\n//# sourceURL=webpack:///./src/todo_list.js?");
 
 /***/ }),
 
