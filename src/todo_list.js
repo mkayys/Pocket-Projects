@@ -1,7 +1,7 @@
 const ul = document.querySelector('.todos');
 const form = document.querySelector('.add-todo-form');
 
-let todos = [];
+let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
 const addTodo = (e) => {
     e.preventDefault();
@@ -19,17 +19,25 @@ const addTodo = (e) => {
 
     form.reset();
 
+    localStorage.setItem('todos', JSON.stringify(todos));
     populateList(todos);
+
 };
 
-const populateList = (todosArr) => {
-    for (let i=0; i < todosArr.length; i++) {
+const populateList = (todos) => {
+
+    if (ul.children) {
+        let childArr = Array.from(ul.children);
+        childArr.forEach(child => ul.removeChild(child));
+    }
+
+    for (let i=0; i < todos.length; i++) {
         // debugger
         let label = document.createElement('label');
         let input = document.createElement('input');
         input.setAttribute('type', 'checkbox');
 
-        label.innerHTML = todosArr[i].text;
+        label.innerHTML = todos[i].text;
 
         let li = document.createElement('li');
         li.appendChild(input);
@@ -37,8 +45,10 @@ const populateList = (todosArr) => {
         ul.appendChild(li);
 
     }
-    todos = [];
-    // debugger
+    // todos = [];
 };
 
+
 form.addEventListener('submit', addTodo);
+
+populateList(todos);
