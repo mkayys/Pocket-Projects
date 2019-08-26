@@ -18,6 +18,9 @@ const dogLinkCreator = () => {
     aTag.innerHTML = Object.keys(dogs)[i];
     aTag.setAttribute('href', Object.values(dogs)[i]);
 
+    // links open to new tab
+    aTag.setAttribute('target', '_blank');
+
     let li = document.createElement('li');
     li.classList.add('dog-link');
     li.appendChild(aTag);
@@ -39,4 +42,21 @@ const attachDogLinks = () => {
   }
 };
 
+
 attachDogLinks();
+
+const handleEnter = () => {
+  const dogLinks = document.querySelectorAll('.dog-link');
+
+  dogLinks.forEach((dog) => dog.classList.remove('hide'));
+};
+
+const handleLeave = () => {
+  const dogLinks = document.querySelectorAll('.dog-link');
+
+  dogLinks.forEach((dog) => dog.classList.add('hide'));
+};
+
+const dropDown = document.querySelector('.drop-down-dog-nav');
+dropDown.addEventListener('mouseenter', handleEnter);
+dropDown.addEventListener('mouseleave', handleLeave);

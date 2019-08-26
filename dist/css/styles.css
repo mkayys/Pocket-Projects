@@ -62,3 +62,31 @@ h1 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.drop-down-dog-nav {
+  padding: 10px;
+  background-color: white;
+  width: 200px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 5px 3px #ebebeb;
+}
+
+
+}
+
+.drop-down-dog-nav:hover {
+  cursor: pointer;
+}
+
+.drop-down-dog-list {
+  /* text-decoration: none; */
+  padding: 5px;
+}
+
+.dog-link a {
+  text-decoration: none;
+  color: grey;
+}
+
+.hide {
+  display: none;
+}
