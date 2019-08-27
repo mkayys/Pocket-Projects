@@ -48,7 +48,11 @@ const populateList = (todos) => {
     // todos = [];
 };
 
+const handleClick = (e) => {
+    e.preventDefault();
+    
+}
 
 form.addEventListener('submit', addTodo);
-
+ul.addEventListener('click', handleClick);
 populateList(todos);
